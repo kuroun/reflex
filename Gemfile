@@ -26,6 +26,8 @@ gem 'twitter-bootstrap-rails'
 gem 'haml', '4.0.7'
 gem 'haml-rails', '0.9.0'
 gem 'simple_form'
+gem 'rspec-rails', '3.5.2'
+gem 'pry-byebug', '3.4.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -37,6 +39,7 @@ gem 'simple_form'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails', '4.7.0'
 end
 
 group :development do
