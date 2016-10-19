@@ -27,7 +27,9 @@ gem 'haml', '4.0.7'
 gem 'haml-rails', '0.9.0'
 gem 'simple_form'
 gem 'rspec-rails', '3.5.2'
+gem 'rails-controller-testing'
 gem 'pry-byebug', '3.4.0'
+gem 'rubocop'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
