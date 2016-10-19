@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :tag do
-    name "MyString"
-    description "MyString"
+    name 'MyString'
+    description 'MyString'
   end
 end

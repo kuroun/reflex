@@ -17,5 +17,34 @@ AllCops:
     - bin/*
 
 Documentation:
-
   Enabled: false
+
+Metrics/BlockLength:
+  Max: 500
+
+Metrics/AbcSize:
+  Max: 50
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/LineLength:
+  Max: 200
+
+Metrics/ClassLength:
+  Max: 700
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 1000
+
+Metrics/ModuleLength:
+  Max: 500
+
+Metrics/ParameterLists:
+  Max: 5
+
+Metrics/PerceivedComplexity:
+  Max: 20
