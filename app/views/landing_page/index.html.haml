@@ -1,0 +1,27 @@
+.page-header
+  %h1
+    Reflex.
+    %small What do you learn today?
+= link_to image_tag('login_with_facebook.jpg', id: 'login'), stories_path
+%blockquote#instruction
+  %p#to_read{:align => "justify"}
+    %em
+      Every night before bed, I always...
+      = link_to 'read more.',"#readmore", {'id' => 'link_to_read', 'data-toggle' => 'collapse'}
+  %p#readmore.collapse{:align => "justify"}
+    %em
+      Every night before bed, I always recap what I have done during the day.
+      I figure out something that I did wrong or failed to do.
+      I need improvement and I don’t want to repeat the failure, so I note down commitment to change.
+      In another day, I come back to my note to give credit to my commitment if I don’t repeat
+      the failure or wrong thing again. Otherwise, I put a blame note to my commitment if I repeat
+      the failure. With this habit, I can track  and see my personal growth insightfully so that
+      I can improve myself and be motivated by what I have improved.
+      %br/
+      %br/
+      With Reflex you can note your commitments, attach positive and negative note to them,
+      track your personal growth, share it with your friends.
+      = link_to 'Try it!', stories_path
+  %footer
+    Reflex Team
+    / <cite title="Source Title">Source Title</cite>

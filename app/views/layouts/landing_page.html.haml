@@ -1,0 +1,15 @@
+!!! 5
+%html(lang="en")
+  %head
+    = render 'shared/header'
+
+  %body
+  .container
+    .row
+      .col-xs-1.col-sm-2.col-md-3
+      .col-xs-10.col-sm-8.col-md-6
+        = bootstrap_flash
+        = yield
+        %footer#copy_right
+          = render 'shared/footer'
+      .col-xs-1.col-sm-2.col-md-3
