@@ -61,6 +61,10 @@ class StoriesController < ApplicationController
     end
   end
 
+  def stories_feed
+    @stories = Story.all
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

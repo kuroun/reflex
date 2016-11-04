@@ -2,7 +2,7 @@
   %h1
     Reflex.
     %small What do you learn today?
-= link_to image_tag('login_with_facebook.jpg', id: 'login'), stories_path
+= link_to image_tag('login_with_facebook.jpg', id: 'login'), stories_feed_path
 %blockquote#instruction
   %p#to_read{:align => "justify"}
     %em
@@ -21,7 +21,7 @@
       %br/
       With Reflex you can note your commitments, attach positive and negative note to them,
       track your personal growth, share it with your friends.
-      = link_to 'Try it!', stories_path
+      = link_to 'Try it!', stories_feed_path
   %footer
     Reflex Team
     / <cite title="Source Title">Source Title</cite>
