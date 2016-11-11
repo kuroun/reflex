@@ -30,7 +30,11 @@ module ApplicationHelper
 
   def word_form num, word
     word = (num > 1) ? word.pluralize : word.singularize
-    "#{num} #{word}"
+    if num > num.round
+      return "more than #{num.round} #{word}"
+    else
+      return "less than #{num.round} #{word}"
+    end
   end
 
   def to_local_time time
@@ -38,37 +42,37 @@ module ApplicationHelper
   end
 
   def minute_format time
-    in_minutes = (to_local_time(Time.now) - to_local_time(time)).to_i.abs / 60
-    (in_minutes > 0) ? "#{word_form(in_minutes,'minute')} ago" : 'a moment ago'
+    in_minutes = (to_local_time(Time.now) - to_local_time(time)).to_f.abs / 60
+    (in_minutes < 1) ? 'a moment ago' : "#{word_form(in_minutes,'minute')} ago"
   end
 
   def hour_format time
-    in_hours = (to_local_time(Time.now) - to_local_time(time)).to_i.abs / 3600
+    in_hours = (to_local_time(Time.now) - to_local_time(time)).to_f.abs / 3600
     "#{word_form(in_hours,'hour')} ago"
   end
 
   def day_format time
-    in_days = (to_local_time(Time.now) - to_local_time(time)).to_i.abs / (3600*24)
+    in_days = (to_local_time(Time.now) - to_local_time(time)).to_f.abs / (3600*24)
     "#{word_form(in_days,'day')} ago"
   end
 
   def week_format time
-    in_weeks = (to_local_time(Time.now) - to_local_time(time)).to_i.abs / (3600*24*7)
+    in_weeks = (to_local_time(Time.now) - to_local_time(time)).to_f.abs / (3600*24*7)
     "#{word_form(in_weeks,'week')} ago"
   end
 
   def month_format time
-    in_months = (to_local_time(Time.now) - to_local_time(time)).to_i.abs / (3600*24*7*30)
+    in_months = (to_local_time(Time.now) - to_local_time(time)).to_f.abs / (3600*24*7*30)
     "#{word_form(in_months,'month')} ago"
   end
 
   def year_format time
-    in_years = (to_local_time(Time.now) - to_local_time(time)).to_i.abs / (3600*24*7*30*12)
+    in_years = (to_local_time(Time.now) - to_local_time(time)).to_f.abs / (3600*24*7*30*12)
     "#{word_form(in_years,'year')} ago"
   end
 
   def full_format time
     formatted_time = to_local_time time
-    formatted_time.strftime("%a, %b #{formatted_time.day.ordinalize} %Y")
+    formatted_time.strftime("%a, %b #{formatted_time.day.ordinalize} %Y at %H:%M")
   end
 end

@@ -34,8 +34,10 @@
         .container-fluid
           .row
             .created_at.col-xs-6.col-sm-6.col-md-6
-              = "Created at #{friendly_timestamp(story.created_at)}"
+              %a{"data-container" => "body", "data-content" => "#{full_format(story.created_at)}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
+                = "Created at #{friendly_timestamp(story.created_at)}"
             .updated_at.col-xs-6.col-sm-6.col-md-6
-              = "Updated at #{friendly_timestamp(story.updated_at)}"
+              %a{"data-container" => "body", "data-content" => "#{full_format(story.updated_at)}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
+                = "Updated at #{friendly_timestamp(story.updated_at)}"
 
 = link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human.titleize), new_story_path, :class => 'btn btn-primary'

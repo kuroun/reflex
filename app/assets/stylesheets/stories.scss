@@ -6,10 +6,18 @@
 .story_actions {
   float: right;
 }
-.story_timestamp {
-  color: grey;
-  font-size: 10px;
-}
 .story_timestamp .updated_at {
   text-align: right;
+}
+.story_timestamp a {
+  color: grey;
+  font-size: 11px;
+}
+.story_timestamp a:hover {
+  cursor: pointer;
+  background-color: inherit;
+  color: inherit;
+}
+.story_timestamp a:focus {
+  outline-style: none;
 }
