@@ -3,8 +3,8 @@ module ApplicationHelper
   ONE_HOUR = ONE_MINUTE * 60
   ONE_DAY = ONE_HOUR * 24
   ONE_WEEK = ONE_DAY * 7
-  ONE_MONTH = ONE_WEEK * 4
-  ONE_YEAR = ONE_MONTH * 12
+  ONE_MONTH = ONE_DAY * 30
+  ONE_YEAR = ONE_DAY * 365
 
   def friendly_timestamp(time)
     # convert time to local time
@@ -25,7 +25,7 @@ module ApplicationHelper
       return week_format time
     when ONE_MONTH...ONE_YEAR
       return month_format time
-    when ONE_YEAR...ONE_YEAR * 10
+    when ONE_YEAR...ONE_YEAR * 5
       return year_format time
     else
       return full_format time
@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def word_form(num, word)
-    word = num > 1 ? word.pluralize : word.singularize
+    word = num.round > 1 ? word.pluralize : word.singularize
     num > num.round ? "more than #{num.round} #{word}" : "less than #{num.round} #{word}"
   end
 
