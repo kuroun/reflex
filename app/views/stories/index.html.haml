@@ -1,43 +1,6 @@
 - model_class = Story
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-- @stories.each do |story|
-  .panel.panel-default
-    .panel-heading
-      %span.story_title
-        = link_to story.title, story_path(story)
-      .story_actions
-        = link_to edit_story_path(story), :class => 'btn btn-default btn-xs' do
-          %span.glyphicon.glyphicon-edit{"aria-hidden" => "true"}
-        = link_to story_path(story), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-default btn-xs' do
-          %span.glyphicon.glyphicon-trash{"aria-hidden" => "true"}
-    .panel-body
-      .story_tags
-        - story.tags.each do |tags|
-          tags.name
-      .story_content
-        = story.content
-      %hr
-      .container-fluid
-        .row
-          .col-xs-1.col-sm-1.col-md-1
-            = link_to "#", :class => 'btn btn-default btn-xs' do
-              %span.glyphicon.glyphicon-minus{"aria-hidden" => "true"}
-          .col-xs-10.col-sm-10.col-md-10
-            .progress
-              .progress-bar.progress-bar-danger{:style => "width: 25%"}
-              .progress-bar.progress-bar-success{:style => "width: 75%"}
-          .col-xs-1.col-sm-1.col-md-1
-            = link_to "#", :class => 'btn btn-default btn-xs' do
-              %span.glyphicon.glyphicon-plus{"aria-hidden" => "true"}
-      .story_timestamp
-        .container-fluid
-          .row
-            .created_at.col-xs-6.col-sm-6.col-md-6
-              %a{"data-container" => "body", "data-content" => "#{full_format(story.created_at)}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
-                = "Created at #{friendly_timestamp(story.created_at)}"
-            .updated_at.col-xs-6.col-sm-6.col-md-6
-              %a{"data-container" => "body", "data-content" => "#{full_format(story.updated_at)}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
-                = "Updated at #{friendly_timestamp(story.updated_at)}"
+= render partial: 'stories'
 
-= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human.titleize), new_story_path, :class => 'btn btn-primary'
+= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human.titleize), new_story_path, remote: true, :class => 'btn btn-primary'

@@ -11,31 +11,30 @@ module ApplicationHelper
     # using minute format if less hour
     # using hour format if less than a day
     # using full format otherwise (Thurs, Nov 12th 2016)
-    diff = (Time.now - time).to_i.abs
-    case diff
+    case (Time.now - time).to_i.abs
     when 0...ONE_MINUTE
-      return 'a moment ago'
+      'a moment ago'
     when ONE_MINUTE...ONE_HOUR
-      return minute_format time
+      minute_format time
     when ONE_HOUR...ONE_DAY
-      return hour_format time
+      hour_format time
     when ONE_DAY...ONE_WEEK
-      return day_format time
+      day_format time
     when ONE_WEEK...ONE_MONTH
-      return week_format time
+      week_format time
     when ONE_MONTH...ONE_YEAR
-      return month_format time
+      month_format time
     when ONE_YEAR...ONE_YEAR * 5
-      return year_format time
+      year_format time
     else
-      return full_format time
+      full_format time
     end
   end
 
   def local_time_zone_offset
     # multiplle -1 here because js represent time difference varies from how rails represents
-    time_zone_offset_utc_sec = -1 * cookies[:time_zone_offset_utc_mn].to_f / 60
-    time_zone_offset_utc_sec
+    # get offset in hour
+    -1 * cookies[:time_zone_offset_utc_mn].to_f / 60
   end
 
   def word_form(num, word)
