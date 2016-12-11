@@ -35,8 +35,8 @@
         .container-fluid
           .row
             .created_at.col-xs-6.col-sm-6.col-md-6
-              %a{"data-container" => "body", "data-content" => "#{full_format(story.created_at)}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
-                = "Created at #{friendly_timestamp(story.created_at)}"
+              %a{"data-container" => "body", "data-content" => "#{story.created_at.full_format(cookies[:fts_offset])}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
+                = "Created at #{story.created_at.friendly_format}"
             .updated_at.col-xs-6.col-sm-6.col-md-6
-              %a{"data-container" => "body", "data-content" => "#{full_format(story.updated_at)}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
-                = "Updated at #{friendly_timestamp(story.updated_at)}"
+              %a{"data-container" => "body", "data-content" => "#{story.updated_at.full_format(cookies[:fts_offset])}", "data-trigger" => "focus", "tabindex" => "0", "role" => "button", "data-placement" => "bottom", "data-toggle" => "popover"}
+                = "Updated at #{story.updated_at.friendly_format}"

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/kuroun/friendly_timestamp
+  revision: 6e33efd99be150b651ce9744cce5b90b4cd479ec
+  specs:
+    friendly_timestamp (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -243,6 +249,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   factory_girl_rails (= 4.7.0)
+  friendly_timestamp!
   haml (= 4.0.7)
   haml-rails (= 0.9.0)
   jbuilder (~> 2.5)
