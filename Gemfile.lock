@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/kuroun/friendly_timestamp
-  revision: 6e33efd99be150b651ce9744cce5b90b4cd479ec
-  specs:
-    friendly_timestamp (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -69,6 +63,7 @@ GEM
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     ffi (1.9.14)
+    friendly_timestamp (1.0.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -106,6 +101,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    messengerjs-rails (1.4.1)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -249,12 +245,13 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   factory_girl_rails (= 4.7.0)
-  friendly_timestamp!
+  friendly_timestamp
   haml (= 4.0.7)
   haml-rails (= 0.9.0)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  messengerjs-rails (~> 1.4.1)
   mongoid (= 6.0.0)
   pry-byebug (= 3.4.0)
   puma (~> 3.0)

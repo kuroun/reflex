@@ -29,6 +29,7 @@ gem 'rspec-rails', '3.5.2'
 gem 'rails-controller-testing'
 gem 'pry-byebug', '3.4.0'
 gem 'rubocop'
+gem "messengerjs-rails", "~> 1.4.1"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -54,4 +55,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'friendly_timestamp', git: 'https://github.com/kuroun/friendly_timestamp'
+gem 'friendly_timestamp'
