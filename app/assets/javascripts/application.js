@@ -15,4 +15,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require friendly_timestamp
+//= require messenger
+//= require messenger-theme-future
 //= require_tree .

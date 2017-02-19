@@ -2,5 +2,4 @@
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 = render partial: 'stories'
-
 = link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human.titleize), new_story_path, remote: true, :class => 'btn btn-primary'

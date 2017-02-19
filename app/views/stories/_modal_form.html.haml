@@ -1,11 +1,29 @@
-= simple_form_for @story, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :title
-  = f.error_span :title
-  = f.input :content
-  = f.error_span :content
-  = f.input :positive
-  = f.error_span :positive
-  = f.input :negative
-  = f.error_span :negative
-  = f.button :submit, :class => 'btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), stories_path, :class => 'btn btn-default'
+#storyForm.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title
+          = locals[:form_name]
+      = simple_form_for @story, remote: true, :html => { :class => 'form-horizontal' } do |f|
+        .modal-body
+          .form-group
+            %label.control-label.col-sm-2{:for => "email"} Email:
+            .col-sm-10
+              -# %input#email.form-control{:placeholder => "Enter email", :type => "email"}
+              = f.input :title, input_html: { class: 'form-control', width: '20%'  }, label: false
+
+          = f.error_span :title
+          = f.input :content
+          = f.error_span :content
+          = f.input :positive
+          = f.error_span :positive
+          = f.input :negative
+          = f.error_span :negative
+        .modal-footer
+          -# %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
+          -# %button.btn.btn-primary{:type => "button"} Save changes
+          -# = link_to t('.cancel', :default => t("helpers.links.cancel")), stories_path, :class => 'btn btn-default'
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
+          = f.button :submit, :class => 'btn-primary'
